@@ -1,0 +1,6 @@
+# Optional local pretrained inference. Model weights download from Hugging Face at first use.
+torch>=2.3
+transformers>=4.44,<5
+soundfile>=0.12
+onnxruntime>=1.17,<2
+c2pa-python>=0.38.0,<0.39

@@ -1,0 +1,16 @@
+.git
+.venv
+venv
+__pycache__
+*.py[cod]
+.env
+data
+backend/data
+models
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.onnx
+node_modules
+dist

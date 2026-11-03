@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c141a" />
+    <meta name="description" content="A clear, cautious screening check for AI-generated images, video, and audio." />
+    <title>TruthLen — A clearer media check</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="TruthLen home">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span>truthlen</span>
+        </a>
+        <nav class="topbar-nav" aria-label="Main navigation">
+          <a href="#how-it-works">How it works</a>
+          <span class="local-badge"><span class="live-dot" aria-hidden="true"></span> Media check</span>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> A careful second look</p>
+            <h1 id="page-title">Get a clearer read<br />on your <em>media.</em></h1>
+            <p class="intro-copy">Check a photo, video, or voice recording for signs often associated with AI creation. TruthLen explains what its checks found—and what they can’t prove.</p>
+            <div class="format-pills" aria-label="Supported media types">
+              <span>Photos</span><span>Videos</span><span>Voice recordings</span>
+            </div>
+          </div>
+          <aside class="hero-visual" id="how-it-works" aria-label="Three-dimensional illustration of media being checked">
+            <div class="visual-halo halo-one"></div><div class="visual-halo halo-two"></div>
+            <div class="visual-orbit orbit-one"><span></span></div><div class="visual-orbit orbit-two"><span></span></div>
+            <div class="media-stack">
+              <div class="stack-side"></div>
+              <div class="stack-face">
+                <div class="stack-topline"><span>TRUTHLEN / MEDIA CHECK</span><i></i></div>
+                <div class="stack-art"><span class="art-moon"></span><span class="art-sun"></span><span class="art-island"></span><span class="art-waterfall"></span><span class="art-stars"></span></div>
+                <div class="stack-bottomline"><span>IMAGE SIGNAL</span><b>01 / 03</b></div>
+              </div>
+              <div class="stack-depth"></div>
+            </div>
+            <span class="visual-chip chip-image">▧ &nbsp; image</span><span class="visual-chip chip-video">▷ &nbsp; video</span><span class="visual-chip chip-audio">♫ &nbsp; audio</span>
+          </aside>
+        </section>
+
+        <section class="workspace-grid" aria-label="Submit media for a check">
+          <div class="panel upload-panel">
+            <div class="section-heading">
+              <div><p class="eyebrow">01 <span>/</span> YOUR FILE</p><h2>Choose something to check</h2></div>
+              <span class="privacy-tag" id="privacy-copy">Your file is removed after the check</span>
+            </div>
+            <form id="upload-form">
+              <label class="dropzone" id="dropzone" for="file-input">
+                <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.webp,.bmp,.mp4,.mov,.avi,.mkv,.webm,.wav,.mp3,.m4a,.flac,.ogg,.aac" />
+                <span class="upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 14v5h14v-5" /></svg></span>
+                <strong id="drop-title">Drop a file here</strong>
+                <span id="drop-subtitle">or choose one from your device</span>
+                <span class="format-hint">JPG · PNG · MP4 · MP3 · WAV · MORE</span>
+              </label>
+              <div class="selected-file" id="selected-file" hidden><span class="file-icon" aria-hidden="true">▧</span><span id="file-name"></span><button type="button" id="clear-file" aria-label="Remove selected file">×</button></div>
+              <div class="preview" id="preview" hidden></div>
+              <div class="hive-consent" id="hive-consent-wrap" hidden>
+                <label><input type="checkbox" id="hive-consent"><span><strong>Allow an additional check by Hive</strong><small>This sends your image or video to an external service. Review its privacy and possible usage charges first. Leave this unchecked for local analysis.</small></span></label>
+              </div>
+              <button class="primary-button" id="analyze-button" type="submit" disabled><span>Check this file</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+              <p class="upload-help" id="upload-help">Choose one file up to 100 MB. Your analysis report may remain in recent activity after the uploaded file is removed.</p>
+            </form>
+          </div>
+
+          <aside class="panel checks-panel" aria-labelledby="checks-title">
+            <div class="section-heading">
+              <div><p class="eyebrow">02 <span>/</span> WHAT WE LOOK AT</p><h2 id="checks-title">A few focused checks</h2></div>
+              <span class="checks-mark" aria-hidden="true">✦</span>
+            </div>
+            <div class="check-list">
+              <article class="check-row"><span class="check-icon photo-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="4" width="17" height="16" rx="3"/><circle cx="9" cy="10" r="1.5"/><path d="m5 17 5-5 3 3 2-2 4 4"/></svg></span><div><h3>Photos</h3><p>Looks for visual patterns a model associates with AI-made pictures.</p></div></article>
+              <article class="check-row"><span class="check-icon video-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></span><div><h3>Videos</h3><p>Checks a handful of frames and, when possible, the sound track. It does not study motion between frames.</p></div></article>
+              <article class="check-row"><span class="check-icon audio-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 10v4m4-8v12m4-15v18m4-14v10m4-7v4"/></svg></span><div><h3>Voice recordings</h3><p>Checks audio for signs associated with generated or altered speech. Music and noise can confuse this check.</p></div></article>
+            </div>
+            <div class="checks-footnote"><span aria-hidden="true">i</span><p>TruthLen uses existing models. It has not been trained or calibrated on a large TruthLen test collection.</p></div>
+          </aside>
+        </section>
+
+        <section class="results-section" id="results-section" hidden aria-labelledby="results-title">
+          <div class="section-heading results-heading"><div><p class="eyebrow">03 <span>/</span> YOUR RESULT</p><h2 id="results-title">Here’s what the checks found</h2></div><a class="secondary-button" id="download-report" href="#" hidden>Save report <span aria-hidden="true">↓</span></a></div>
+          <div id="job-message" class="job-message" role="status" aria-live="polite" hidden></div>
+          <div id="result-content" hidden>
+            <div class="result-hero panel">
+              <div class="result-score-heading"><p class="eyebrow">MODEL SCORE BREAKDOWN</p><h3 id="result-score-title">Image class scores</h3><p id="score-label">The model’s scores for each class. These are not probabilities.</p></div>
+              <div class="hero-class-scores" id="hero-class-scores" aria-live="polite"></div>
+            </div>
+            <div class="modality-grid" id="modality-grid"></div>
+            <details class="comparison-panel panel" id="comparison-panel" hidden>
+              <summary><span><span class="eyebrow">OPTIONAL CROSS-CHECK</span><strong>See another model’s result</strong></span><span class="details-chevron" aria-hidden="true">⌄</span></summary>
+              <p class="comparison-note">Different models can disagree. These extra results are shown separately and do not change the overall reading.</p>
+              <div class="modality-grid" id="comparison-grid"></div>
+            </details>
+            <section class="provenance-panel panel">
+              <div class="provenance-icon" aria-hidden="true">◇</div>
+              <div class="provenance-copy"><p class="eyebrow">FILE INFORMATION</p><h3>Signed origin details</h3><p id="provenance-summary"></p></div>
+              <span class="tag" id="provenance-label">Not checked</span>
+            </section>
+            <details class="technical-details panel" id="technical-panel">
+              <summary><span><span class="eyebrow">FOR A CLOSER LOOK</span><strong>Technical details and evidence</strong></span><span class="details-chevron" aria-hidden="true">⌄</span></summary>
+              <ul id="explanations"></ul><div class="timestamps" id="timestamps" hidden></div><p class="result-notice" id="result-notice"></p>
+            </details>
+            <aside class="final-caution panel"><span class="caution-mark" aria-hidden="true">!</span><p id="final-caution">Only one primary model contributed to the overall result. Model scores can be wrong. Don’t rely on this result alone.</p></aside>
+          </div>
+        </section>
+
+        <section class="history-section" aria-labelledby="history-title">
+          <div class="section-heading"><div><p class="eyebrow">RECENT ACTIVITY</p><h2 id="history-title">Recent checks</h2></div><button class="text-button" id="refresh-history">Refresh <span aria-hidden="true">↻</span></button></div>
+          <div class="history-list" id="history-list"><p class="empty-state">Your recent checks will appear here.</p></div>
+        </section>
+      </main>
+
+      <footer><a class="footer-brand" href="/">truthlen</a><span>Screening can guide a closer look; it cannot prove where media came from.</span></footer>
+    </div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

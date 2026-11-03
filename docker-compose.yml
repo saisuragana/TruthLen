@@ -1,0 +1,59 @@
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      TRUTHLEN_DATA_DIR: /data
+      TRUTHLEN_QUEUE_BACKEND: redis
+      TRUTHLEN_REDIS_URL: redis://redis:6379/0
+      HF_HOME: /model-cache
+    ports:
+      - "8000:8000"
+    volumes:
+      - truthlen-data:/data
+      - model-cache:/model-cache
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      TRUTHLEN_DATA_DIR: /data
+      TRUTHLEN_QUEUE_BACKEND: redis
+      TRUTHLEN_REDIS_URL: redis://redis:6379/0
+      HF_HOME: /model-cache
+    command: ["rq", "worker", "--url", "redis://redis:6379/0", "truthlen"]
+    volumes:
+      - truthlen-data:/data
+      - model-cache:/model-cache
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+  truthlen-data:
+  model-cache:

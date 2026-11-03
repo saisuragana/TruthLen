@@ -218,3 +218,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# TruthLen local state, uploads, credentials, and model artifacts
+.env
+data/
+backend/data/
+models/*
+!models/README.md
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.onnx
+
+# Evaluation datasets, images, and results
+eval/
+evaluation/
+eval_images/
+*.eval.csv
+eval_*.json
