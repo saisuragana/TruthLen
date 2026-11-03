@@ -1,4 +1,5 @@
 .git
+.github
 .venv
 venv
 __pycache__
@@ -6,6 +7,7 @@ __pycache__
 .env
 data
 backend/data
+eval
 models
 *.safetensors
 *.ckpt

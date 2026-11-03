@@ -102,6 +102,8 @@ Model files are downloaded at runtime and are not committed. TruthLen has not tr
 
 See [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md) for FT-02 coverage, the time-boxed plan to the **November 4, 2026, 8:00 PM IST** deadline, team split, and remaining validation work. See [docs/MODELS_AND_LIMITATIONS.md](docs/MODELS_AND_LIMITATIONS.md) for model provenance and known constraints.
 
+For a public hackathon demo URL using an eligible Azure for Students subscription, follow [docs/AZURE_STUDENT_DEPLOYMENT.md](docs/AZURE_STUDENT_DEPLOYMENT.md). The guide uses Azure Container Apps with a maximum of one replica and scale-to-zero enabled.
+
 ## License
 
 This repository is MIT licensed. Each downloaded model has its own license and terms; verify those before redistribution or deployment.
